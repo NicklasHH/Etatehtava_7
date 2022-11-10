@@ -25,7 +25,7 @@ function tutkiJaLisaa() {
 	}
 }
 
-// Tutkitaan lisättävät tiedot ennen niiden päivittämistä backendiin
+// Tutkitaan päivitettävät tiedot ennen niiden päivittämistä backendiin
 function tutkiJaPaivita() {
 	if (tutkiTiedot()) {
 		paivitaTiedot();

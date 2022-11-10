@@ -1,9 +1,13 @@
 INDEX VERSION 1.131
 C:\Users\nickl\Desktop\Ohjelmointi_palautettavat\Viikko5\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2025001041.index
 \Asiakkaat\src\main\java
+C:\Users\nickl\Desktop\Ohjelmointi_palautettavat\Viikko7\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2340920558.index
+\Asiakkaat\src\main\java
 C:\Users\nickl\Desktop\Etatehtavat_4\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2025001041.index
 \Asiakkaat\src\main\java
 C:\Users\nickl\Desktop\Ohjelmointi_palautettavat\Viikko6\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2340920558.index
 \Asiakkaat\src\main\java
 C:\Users\nickl\Desktop\Ohjelmointi_palautettavat\Viikko6\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2025001041.index
+\Asiakkaat\src\main\java
+C:\Users\nickl\Desktop\Ohjelmointi_palautettavat\Viikko7\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2025001041.index
 \Asiakkaat\src\main\java

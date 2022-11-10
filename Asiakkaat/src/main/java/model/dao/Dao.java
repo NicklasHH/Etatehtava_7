@@ -14,17 +14,16 @@ public class Dao {
 	private Connection con = null;
 	private ResultSet rs = null;
 	private PreparedStatement stmtPrep = null;
-	private String sql;
+	private String sql = "";
 	private String db = "Myynti.sqlite";
 
 	private Connection yhdista() {
 		Connection con = null;
 		String path = System.getProperty("catalina.base");
-		//path = path.substring(0, path.indexOf(".metadata")).replace("\\", "/"); // Eclipsessa
-		path =  new File(System.getProperty("user.dir")).getParentFile().toString() +"\\"; //Testauksessa	
-		// System.out.println(path); //Tästä näet mihin kansioon laitat
-		// tietokanta-tiedostosi
-		// path += "/webapps/"; //Tuotannossa. Laita tietokanta webapps-kansioon
+		path = path.substring(0, path.indexOf(".metadata")).replace("\\", "/"); // Eclipsessa
+		//path =  new File(System.getProperty("user.dir")).getParentFile().toString() +"\\"; //Testauksessa
+		//System.out.println(path); //Tästä näet mihin kansioon laitat tietokanta-tiedostosi
+		//path += "/webapps/"; //Tuotannossa. Laita tietokanta webapps-kansioon
 		String url = "jdbc:sqlite:" + path + db;
 		try {
 			Class.forName("org.sqlite.JDBC");
@@ -37,7 +36,7 @@ public class Dao {
 		return con;
 	}
 
-	private void sulje() {
+	private void sulje() {		
 		if (stmtPrep != null) {
 			try {
 				stmtPrep.close();
@@ -227,5 +226,28 @@ public class Dao {
 			sulje();
 		}
 		return paluuArvo;
+	}
+
+	public String findUser(String uid, String pwd) {
+		String nimi = null;
+		sql = "SELECT * FROM asiakkaat WHERE sposti=? AND salasana=?";
+		try {
+			con = yhdista();
+			if (con != null) {
+				stmtPrep = con.prepareStatement(sql);
+				stmtPrep.setString(1, uid);
+				stmtPrep.setString(2, pwd);
+				rs = stmtPrep.executeQuery();
+				if (rs.isBeforeFirst()) { // jos kysely tuotti dataa, eli asiakas löytyi
+					rs.next();
+					nimi = rs.getString("etunimi") + " " + rs.getString("sukunimi");
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sulje();
+		}
+		return nimi;
 	}
 }
