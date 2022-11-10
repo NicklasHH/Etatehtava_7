@@ -1,0 +1,20 @@
+package test;
+
+import static org.junit.jupiter.api.Assertions.*;
+import java.util.ArrayList;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
+import model.Asiakas;
+import model.dao.Dao;
+
+@TestMethodOrder(OrderAnnotation.class)
+class JUnit_testaa_asiakkaat {
+
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+
+}
